@@ -1,0 +1,27 @@
+/*
+ Theme Name:   Shapely Child
+ Theme URI:    http://example.com/twenty-fifteen-child/
+ Description:  Theme for ppgps
+ Author:       Samuel Boutron
+ Author URI:   
+ Template:     shapely
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         custom
+ Text Domain:  shapely-child
+*/
+
+
+input.input-text.qty.text {
+    line-height: 2.5;
+    border-radius: 0px;
+}
+
+.woocommerce div.product form.cart div.quantity {
+    margin:0;
+}
+
+.woocommerce div.product form.cart .button {
+    border-radius: 0px
+}
