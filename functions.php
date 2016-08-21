@@ -1,9 +1,14 @@
 <?php
+require get_stylesheet_directory() . '/inc/woo-setup.php';
+require get_stylesheet_directory() . '/inc/extras.php';
 
-
-
-remove_action( 'wp_enqueue_scripts', 'shapely_scripts' );
-
+function tweak_parent_theme2(){ 
+	//remove_filter('wp_nav_menu_items','shapely_woomenucart',10);
+	remove_action( 'wp_enqueue_scripts', 'shapely_scripts' );
+}
+add_action('after_setup_theme','tweak_parent_theme2');
+/** remove style and style from parent theme, load theme again adding child styles **/
+//remove_action( 'wp_enqueue_scripts', 'shapely_scripts' );
 function shapelychild_scripts() {
 	
 // Add Bootstrap default CSS
@@ -52,9 +57,13 @@ function shapelychild_scripts() {
     if ( is_page_template( 'template-home.php' ) ) {
         wp_enqueue_script( 'shapely-parallax', get_template_directory_uri() . '/js/parallax.min.js', array('jquery'), '20160115', true );
     }
-
-    wp_enqueue_script( 'shapely-scripts', get_template_directory_uri() . '/js/shapely-scripts.js', array('jquery'), '20160115', true );
+	
+	// tweak parent theme with js
+    wp_enqueue_script( 'shapely-scripts', get_stylesheet_directory_uri() . '/js/shapely-scripts.js', array('jquery'), '20160115', true );
+	
 }
 add_action( 'wp_enqueue_scripts', 'shapelychild_scripts' );
 
 ?>
+
+

@@ -12,16 +12,126 @@
  Text Domain:  shapely-child
 */
 
+/* change nav-bar and shop menu */
+	.main-navigation {
+		background: black;
+	}
+	.shop-menu{
+		float:right;
+	}
 
+	.nav-shop-menu {
+		background-color: #222;
+	}
+	.shop-menu ul {
+		margin-bottom:0px;
+		list-style: none;
+	}
+	.menu li a {
+		color:white;
+		opacity:0.9;
+		font-size:0.9em;
+	}
+	.woo-menu-cart .woocommerce-Price-amount {
+		color: white;
+	}
+	/*nav bar always sticky*/
+	nav#site-navigation, .sticky-header {
+		position: fixed;
+		visibility: visible;
+		opacity: 1;
+		top: 0;
+		width: 100%;
+		z-index: 999;
+		left: 0;
+		right: 0;
+	}
+	.main-container {/*margin-top:64px;*/}
+	.shop-menu-container, .shop-menu, .nav-bar, {
+		height: 40px;
+		line-height:40px;
+	}
+	.main-container {
+		margin-top: 40px;
+	}
+	.empty-div{
+		padding-top: 40px;
+	}
+	.admin-bar .sticky-header, .admin-bar nav#site-navigation {
+		top:32px;
+	}
+	@media screen and (max-width: 782px) {
+	  .admin-bar .sticky-header, .admin-bar nav#site-navigation {
+		top: 0px;
+	  }
+	  
+.menu li {
+    line-height: 24px;
+    float: none;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+	}
+	
+	
+/* change qty size to match add button */
 input.input-text.qty.text {
     line-height: 2.5;
     border-radius: 0px;
 }
+.woocommerce div.product form.cart div.quantity {margin:0;}
+.woocommerce div.product form.cart .button {border-radius: 0px}
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {text-align: center;}
 
-.woocommerce div.product form.cart div.quantity {
-    margin:0;
+/* change shop header deprecated since we no more display this */
+#breadcrumbs a, #breadcrumbs .breadcrumb_last { /*for yoast breadrcum*/
+	margin-left: 40px;
+	text-transform:uppercase;
+	}
+section.page-title-section.bg-secondary {
+    padding: 0;
+    margin: 0;
+    height: auto;
+}
+section.content-area {
+	padding-top:0px;
+}
+h1.page-title {
+    visibility: hidden;
+    height: 0px;
 }
 
-.woocommerce div.product form.cart .button {
-    border-radius: 0px
+/* fullwidth background behind shop image*/
+.page-description {/*dirty trick for fullwidth background behind shop image*/
+    position: relative;
+}
+.page-description:before{/*dirty trick for fullwidth background behind shop image*/
+    content: "";
+	background:black;
+    height: 100%;
+    width: 300%;
+    position: absolute;
+    left: -100%;
+    top: 0;
+    z-index: -99999;
+}
+
+/* change font on shop page*/
+ul.products .product h3 {
+    line-height: inherit;
+    text-align: center;
+	min-height: 5em;
+}
+ul.products .price, .amount {
+    color: black;
+    text-align: center;
+    font-size: 1.125em;
+}
+
+/* change font on product page*/
+.summary h1{
+    font-size: 1.5em;
+    line-height: 1.125em;
+    font-weight: bold;
 }
